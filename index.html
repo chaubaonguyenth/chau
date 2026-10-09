@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nguyễn Thiện Bảo Châu – Business Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap&amp;subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<nav><a href="#about">Giới thiệu</a><a href="#problem">Vấn đề</a><a href="#brd">BRD</a><a href="#frd">FRD</a><a href="#flow">Workflow</a><a href="#diagram">Diagram</a><a href="#wire">Wireframe</a><a href="#proto">Prototype</a><a href="#us">US &amp; AC</a><a href="#contact">Liên hệ</a></nav>
+<main>
+<div class="hero" id="about">
+<span class="tag">Business Analyst · Insurance</span>
+<h1>Nguyễn Thiện Bảo Châu</h1>
+<p class="mu" style="max-width:620px">Business Analyst chuyên chuyển hóa vấn đề kinh doanh thành yêu cầu rõ ràng, có thể đo lường và triển khai được. Trang này trình bày một case study end-to-end trong lĩnh vực bảo hiểm.</p>
+<a class="btn p" href="#problem">Xem case study</a><a class="btn" href="#contact">Liên hệ</a>
+</div>
+
+<section id="problem">
+<h2><small>CASE STUDY</small>Số hóa quy trình bồi thường bảo hiểm xe cơ giới</h2>
+<p class="mu">Công ty bảo hiểm phi nhân thọ (giả định) · Vai trò: Business Analyst · Công cụ: Draw.io, Figma, Jira, Confluence</p>
+<p class="cap">* Đây là case study minh họa; số liệu là giả định để trình bày phương pháp làm việc.</p>
+<h3>Vấn đề doanh nghiệp đang gặp phải</h3>
+<div class="grid">
+<div class="card"><div class="stat">14 ngày</div>thời gian trung bình giải quyết một hồ sơ bồi thường</div>
+<div class="card"><div class="stat">38%</div>hồ sơ bị trả lại do thiếu hoặc sai giấy tờ</div>
+<div class="card"><div class="stat">62%</div>cuộc gọi tổng đài hỏi về tình trạng hồ sơ</div>
+<div class="card"><div class="stat">3.2/5</div>điểm hài lòng (CSAT) của khách hàng khi bồi thường</div>
+</div>
+<h3>Nguyên nhân gốc (Root cause)</h3>
+<ul><li>Khách hàng nộp hồ sơ giấy tại văn phòng, không có checklist hướng dẫn.</li>
+<li>Giám định viên nhập tay thông tin vào hệ thống lõi, dễ sai sót.</li>
+<li>Khách hàng không theo dõi được trạng thái nên phải gọi tổng đài.</li></ul>
+<h3>Giải pháp đề xuất</h3>
+<p>Xây dựng tính năng <b>Yêu cầu bồi thường trực tuyến</b> trên app/web: khai báo sự cố, tải ảnh, kiểm tra hồ sơ tự động, theo dõi trạng thái theo thời gian thực.</p>
+</section>
+
+<section id="brd">
+<h2><small>BRD · BUSINESS REQUIREMENTS DOCUMENT</small>Yêu cầu nghiệp vụ</h2>
+<div class="grid">
+<div class="card"><b>Mục tiêu kinh doanh</b><ul><li>Giảm thời gian xử lý xuống ≤ 5 ngày</li><li>Giảm hồ sơ bị trả lại xuống ≤ 10%</li><li>Giảm 40% cuộc gọi hỏi trạng thái</li><li>CSAT ≥ 4.2/5</li></ul></div>
+<div class="card"><b>Trong phạm vi (In scope)</b><ul><li>Bồi thường vật chất xe ô tô cá nhân</li><li>Kênh app &amp; web</li><li>Theo dõi trạng thái, thông báo</li></ul></div>
+<div class="card"><b>Ngoài phạm vi (Out of scope)</b><ul><li>Bồi thường thương tích về người</li><li>Xe doanh nghiệp, xe máy</li><li>Thanh toán chuyển khoản tự động (phase 2)</li></ul></div>
+</div>
+<h3>Các bên liên quan (Stakeholders)</h3>
+<div class="sc"><table><tr><th>Stakeholder</th><th>Vai trò</th><th>Mối quan tâm</th></tr>
+<tr><td>Khách hàng</td><td>Người dùng cuối</td><td>Nộp nhanh, biết tiến độ</td></tr>
+<tr><td>Giám định viên</td><td>Người xử lý</td><td>Hồ sơ đủ, dữ liệu chuẩn</td></tr>
+<tr><td>Trưởng phòng Bồi thường</td><td>Sponsor nghiệp vụ</td><td>SLA, tỷ lệ gian lận</td></tr>
+<tr><td>Bộ phận IT / Core</td><td>Triển khai</td><td>Tích hợp, bảo mật</td></tr>
+<tr><td>Pháp chế &amp; Tuân thủ</td><td>Kiểm soát</td><td>Luật Kinh doanh bảo hiểm, bảo vệ dữ liệu cá nhân</td></tr></table></div>
+<h3>Ràng buộc &amp; giả định</h3>
+<ul><li>Tích hợp với hệ thống quản lý hợp đồng (Policy Admin) qua API có sẵn.</li><li>Giả định: khách hàng đã có tài khoản và hợp đồng đang hiệu lực.</li></ul>
+</section>
+
+<section id="frd">
+<h2><small>FRD · FUNCTIONAL REQUIREMENTS DOCUMENT</small>Yêu cầu chức năng</h2>
+<div class="sc"><table><tr><th>ID</th><th>Chức năng</th><th>Mô tả</th><th>Ưu tiên</th></tr>
+<tr><td>FR-01</td><td>Xác thực hợp đồng</td><td>Nhập số hợp đồng/biển số; hệ thống kiểm tra hợp đồng còn hiệu lực tại thời điểm xảy ra sự cố.</td><td>Must</td></tr>
+<tr><td>FR-02</td><td>Khai báo sự cố</td><td>Nhập ngày giờ, địa điểm, loại tổn thất, mô tả. Các trường bắt buộc được validate.</td><td>Must</td></tr>
+<tr><td>FR-03</td><td>Tải chứng từ</td><td>Tải tối thiểu 4 ảnh xe, ảnh GPLX, CCCD. Định dạng JPG/PNG/PDF, ≤ 10MB/file.</td><td>Must</td></tr>
+<tr><td>FR-04</td><td>Kiểm tra hồ sơ tự động</td><td>Đối chiếu checklist; báo thiếu ngay trước khi gửi.</td><td>Must</td></tr>
+<tr><td>FR-05</td><td>Phân công giám định</td><td>Tự động phân công theo khu vực và tải công việc.</td><td>Should</td></tr>
+<tr><td>FR-06</td><td>Theo dõi trạng thái</td><td>Hiển thị trạng thái hồ sơ và lịch sử xử lý.</td><td>Must</td></tr>
+<tr><td>FR-07</td><td>Thông báo</td><td>Gửi push/SMS/email khi trạng thái thay đổi.</td><td>Should</td></tr>
+<tr><td>FR-08</td><td>Phê duyệt theo thẩm quyền</td><td>Hồ sơ &gt; 50 triệu cần cấp quản lý duyệt.</td><td>Must</td></tr></table></div>
+<h3>Yêu cầu phi chức năng (NFR)</h3>
+<ul><li>Hiệu năng: tải ảnh ≤ 5 giây với kết nối 4G.</li><li>Bảo mật: mã hóa dữ liệu truyền tải và lưu trữ; ghi log truy cập.</li><li>Sẵn sàng: 99.5% uptime trong giờ hành chính.</li></ul>
+</section>
+
+<section id="flow">
+<h2><small>PROCESS WORKFLOW</small>Quy trình TO-BE</h2>
+<p class="mu">AS-IS: khách đến văn phòng → nộp hồ sơ giấy → nhân viên nhập liệu → giám định → duyệt → thanh toán (~14 ngày). Quy trình TO-BE sau khi số hóa:</p>
+<div class="mer"><pre class="mermaid">
+flowchart TD
+A([Khách hàng mở app]) --> B[Nhập số hợp đồng]
+B --> C{Hợp đồng hiệu lực?}
+C -- Không --> X([Từ chối và thông báo])
+C -- Có --> D[Khai báo sự cố]
+D --> E[Tải ảnh và chứng từ]
+E --> F{Hồ sơ đủ checklist?}
+F -- Thiếu --> E
+F -- Đủ --> G[Gửi yêu cầu]
+G --> H[Tự động phân công giám định viên]
+H --> I[Giám định và đề xuất mức bồi thường]
+I --> J{Trên 50 triệu?}
+J -- Có --> K[Quản lý phê duyệt]
+J -- Không --> L[Giám định viên duyệt]
+K --> M[Thanh toán]
+L --> M
+M --> N([Thông báo hoàn tất])
+</pre></div>
+</section>
+
+<section id="diagram">
+<h2><small>DIAGRAM</small>Vòng đời trạng thái hồ sơ</h2>
+<div class="mer"><pre class="mermaid">
+stateDiagram-v2
+[*] --> Nhap
+Nhap --> DaGui: Gửi hồ sơ
+DaGui --> CanBoSung: Thiếu chứng từ
+CanBoSung --> DaGui: Bổ sung
+DaGui --> DangGiamDinh: Phân công
+DangGiamDinh --> ChoDuyet: Đề xuất mức bồi thường
+ChoDuyet --> DaDuyet: Phê duyệt
+ChoDuyet --> TuChoi: Từ chối
+DaDuyet --> DaThanhToan: Chi trả
+DaThanhToan --> [*]
+TuChoi --> [*]
+</pre></div>
+<p class="cap">Các trạng thái hiển thị cho khách hàng ở FR-06 và là điều kiện kích hoạt thông báo ở FR-07.</p>
+</section>
+
+<section id="wire">
+<h2><small>WIREFRAME</small>Low-fidelity</h2>
+<div class="phones">
+<div class="ph"><b>1. Xác thực hợp đồng</b><div class="bx">Số hợp đồng / Biển số</div><div class="bx">Ngày xảy ra sự cố</div><div class="bx btnw">Tiếp tục</div></div>
+<div class="ph"><b>2. Khai báo &amp; tải ảnh</b><div class="bx">Địa điểm</div><div class="bx">Mô tả sự cố</div><div class="bx">+ Ảnh xe (0/4)</div><div class="bx">+ GPLX · CCCD</div><div class="bx btnw">Kiểm tra hồ sơ</div></div>
+<div class="ph"><b>3. Theo dõi hồ sơ</b><div class="bx">Mã: BT-2026-0001</div><div class="bx">● Đã gửi ─ ○ Giám định ─ ○ Duyệt ─ ○ Chi trả</div><div class="bx">Lịch sử xử lý</div></div>
+</div>
+</section>
+
+<section id="proto">
+<h2><small>PROTOTYPE</small>Thử nghiệm luồng khai báo bồi thường</h2>
+<p class="mu">Bản prototype tương tác (hi-fi giản lược). Thử nhập số hợp đồng bất kỳ ≥ 6 ký tự.</p>
+<div class="proto" id="pr"></div>
+</section>
+
+<section id="us">
+<h2><small>USER STORIES &amp; ACCEPTANCE CRITERIA</small>Backlog tiêu biểu</h2>
+<details open><summary>US-01 · Xác thực hợp đồng (FR-01)</summary>
+<p>Là một <b>khách hàng</b>, tôi muốn <b>nhập số hợp đồng để bắt đầu yêu cầu bồi thường</b>, để <b>không phải đến văn phòng</b>.</p>
+<div class="ac"><b>Acceptance Criteria (Given/When/Then)</b><ul>
+<li>Given hợp đồng hiệu lực tại ngày sự cố, When tôi nhập đúng số hợp đồng, Then hệ thống chuyển sang bước khai báo.</li>
+<li>Given hợp đồng hết hạn, When tôi xác nhận, Then hiển thị thông báo từ chối kèm lý do.</li>
+<li>Given số hợp đồng không tồn tại, When tôi xác nhận, Then báo lỗi và cho nhập lại.</li></ul></div></details>
+<details><summary>US-02 · Tải chứng từ (FR-03)</summary>
+<p>Là một <b>khách hàng</b>, tôi muốn <b>chụp và tải ảnh xe, giấy tờ ngay trên điện thoại</b>, để <b>hồ sơ được nhận ngay</b>.</p>
+<div class="ac"><ul>
+<li>Given tôi chọn file JPG/PNG/PDF ≤ 10MB, When tải lên, Then hiển thị ảnh xem trước.</li>
+<li>Given file vượt 10MB hoặc sai định dạng, When tải lên, Then báo lỗi rõ ràng, không mất dữ liệu đã nhập.</li>
+<li>Given đang mất kết nối, When tải lên, Then cho phép thử lại mà không nhập lại biểu mẫu.</li></ul></div></details>
+<details><summary>US-03 · Kiểm tra hồ sơ tự động (FR-04)</summary>
+<p>Là một <b>khách hàng</b>, tôi muốn <b>biết hồ sơ còn thiếu gì trước khi gửi</b>, để <b>không bị trả lại</b>.</p>
+<div class="ac"><ul>
+<li>Given thiếu bất kỳ chứng từ bắt buộc, When nhấn “Gửi”, Then nút bị chặn và liệt kê mục còn thiếu.</li>
+<li>Given đủ checklist, When nhấn “Gửi”, Then tạo mã hồ sơ và chuyển sang màn theo dõi.</li></ul></div></details>
+<details><summary>US-04 · Theo dõi trạng thái (FR-06, FR-07)</summary>
+<p>Là một <b>khách hàng</b>, tôi muốn <b>xem trạng thái hồ sơ theo thời gian thực</b>, để <b>không phải gọi tổng đài</b>.</p>
+<div class="ac"><ul>
+<li>Given hồ sơ đổi trạng thái, When hệ thống cập nhật, Then tôi nhận thông báo trong vòng 1 phút.</li>
+<li>Given tôi mở chi tiết hồ sơ, Then thấy mốc thời gian của từng trạng thái.</li></ul></div></details>
+<details><summary>US-05 · Phê duyệt theo thẩm quyền (FR-08)</summary>
+<p>Là một <b>trưởng phòng bồi thường</b>, tôi muốn <b>chỉ duyệt các hồ sơ vượt hạn mức</b>, để <b>kiểm soát rủi ro mà không nghẽn quy trình</b>.</p>
+<div class="ac"><ul>
+<li>Given mức đề xuất &gt; 50 triệu, Then hồ sơ chuyển vào hàng chờ duyệt của quản lý.</li>
+<li>Given mức đề xuất ≤ 50 triệu, Then giám định viên được duyệt trực tiếp.</li>
+<li>Mọi quyết định duyệt/từ chối đều được ghi log người thực hiện và thời gian.</li></ul></div></details>
+</section>
+
+<footer id="contact">
+<h2>Liên hệ</h2>
+<p class="mu">Nguyễn Thiện Bảo Châu · Business Analyst</p>
+<a class="btn p" href="tel:0935027649">0935 027 649</a>
+<a class="btn" href="mailto:chaubaonguyenthien@gmail.com">chaubaonguyenthien@gmail.com</a>
+</footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="script.js"></script>
+</body></html>
