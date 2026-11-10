@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bảo Châu’s Graduation Ceremony</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Pacifico&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{--pk:#ff9fc3;--pk2:#ffd9e8;--bl:#8fc3ee;--bl2:#dcecfc;--mn:#bdeee0;--ink:#4b6a93;color-scheme:light}
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
@@ -184,21 +184,49 @@ img.char{position:absolute;z-index:6;object-fit:contain;transform-origin:50% 100
 /* ===== nơ pastel (ảnh no-1 ... no-9) ===== */
 img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-origin:50% 50%;animation:bwig 3.4s ease-in-out infinite;filter:drop-shadow(0 2px 0 rgba(230,138,168,.25))}
 @keyframes bwig{0%,100%{transform:rotate(calc(var(--r,0deg) - 5deg)) scale(1)}50%{transform:rotate(calc(var(--r,0deg) + 5deg)) scale(1.06)}}
+
+/* ===== hoa văn, bướm, khuông nhạc ===== */
+.dv{display:block;width:88%;max-width:340px;height:auto;margin:2px auto 8px}
+img.fly{position:absolute;z-index:5;height:auto;pointer-events:none;animation:flyc 3.6s ease-in-out infinite;filter:drop-shadow(0 2px 0 rgba(230,138,168,.22))}
+@keyframes flyc{0%,100%{transform:translate(0,0) rotate(-8deg) scaleX(1)}25%{transform:translate(10px,-14px) rotate(6deg) scaleX(.78)}50%{transform:translate(22px,-4px) rotate(12deg) scaleX(1)}75%{transform:translate(8px,-16px) rotate(-4deg) scaleX(.8)}}
+.staff{position:fixed;left:0;right:0;height:96px;background-repeat:repeat-x;background-size:499.2px 96px;pointer-events:none;z-index:0;opacity:.95}
+#st1{bottom:92px;background-image:url(images/staff-1.png);animation:flowl 55s linear infinite}
+#st2{top:16px;background-image:url(images/staff-2.png);animation:flowr 65s linear infinite}
+@keyframes flowl{from{background-position:0 0}to{background-position:-499.2px 0}}
+@keyframes flowr{from{background-position:0 0}to{background-position:499.2px 0}}
+
+.pg{padding-top:106px;overflow-x:hidden}
+
+/* ===== phông chữ tiêu đề "Bảo Châu's Graduation Ceremony" =====
+   Đặt file phông của bạn vào thư mục fonts/ với tên: tieu-de.ttf (hoặc tieu-de.otf / tieu-de.woff2).
+   Chưa có file thì dùng tạm phông Dancing Script. */
+@font-face{font-family:'TieuDe';src:url(fonts/tieu-de.woff2) format('woff2'),url(fonts/tieu-de.ttf) format('truetype'),url(fonts/tieu-de.otf) format('opentype');font-display:swap}
+.gc{font-family:'TieuDe','Fredoka','Baloo 2',sans-serif;font-weight:700;font-size:42px;line-height:1.15;letter-spacing:1px;margin:0 0 10px}
+.gc span{display:block;font-size:30px;line-height:1.2}
+.gc em{font-style:normal;display:inline-block;white-space:nowrap}
+.gc i{font-style:normal;display:inline-block;position:relative;animation:lw 2.4s ease-in-out infinite;animation-delay:calc(var(--n,0)*.12s);
+ text-shadow:-2px 0 var(--o),2px 0 var(--o),0 -2px var(--o),0 2px var(--o),-2px -2px var(--o),2px 2px var(--o),-2px 2px var(--o),2px -2px var(--o),0 4px 0 var(--o)}
+.gc .c0{color:#ffb3cf;--o:#e0709c}.gc .c1{color:#bfe0f8;--o:#5aa6dc}.gc .c2{color:#bdf0d6;--o:#45b98a}
+.gc .c3{color:#ffd0b8;--o:#e6906a}.gc .c4{color:#ffc4da;--o:#e0709c}.gc .c5{color:#cfe9fb;--o:#5aa6dc}
+.gc .sk{position:absolute;right:-.28em;top:-.18em;font-size:.55em;line-height:1;color:var(--k,#ffb3cf);text-shadow:none;animation:twk 1.8s ease-in-out infinite;pointer-events:none}
+@keyframes lw{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+@keyframes twk{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.45) rotate(45deg);opacity:.5}}
 </style>
 </head>
 <body>
 <div id="stripe"></div>
 <div id="bgf"></div>
 
+<div class="staff" id="st2"></div><div class="staff" id="st1"></div>
 <main id="stage">
 
   <!-- TRANG 1: BÌA + ẢNH (đặt file anh.jpg cạnh index.html) -->
-  <div class="pg"><div class="wrap"><img class="bw" src="images/no-5.png" alt="" style="width:76px;left:-22px;top:-8px;--r:-22deg;animation-delay:-0.53s" onerror="this.style.display='none'"><img class="bw" src="images/no-6.png" alt="" style="width:76px;right:-22px;top:-8px;--r:22deg;scale:-1 1;animation-delay:-1.06s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-1.png" alt="" style="width:120px;height:100px;left:50%;margin-left:-60px;top:-86px;animation-delay:-0.37s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-7.png" alt="" style="width:64px;height:70px;right:-14px;bottom:-14px;animation-delay:-0.74s" onerror="this.style.display='none'">
+  <div class="pg"><div class="wrap"><img class="fly" src="images/butterfly-1.png" alt="" style="width:62px;right:-30px;top:38%;animation-delay:-0.5s" onerror="this.style.display='none'"><img class="bw" src="images/no-5.png" alt="" style="width:76px;left:-22px;top:-8px;--r:-22deg;animation-delay:-0.53s" onerror="this.style.display='none'"><img class="bw" src="images/no-6.png" alt="" style="width:76px;right:-22px;top:-8px;--r:22deg;scale:-1 1;animation-delay:-1.06s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-1.png" alt="" style="width:120px;height:100px;left:50%;margin-left:-60px;top:-86px;animation-delay:-0.37s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-7.png" alt="" style="width:64px;height:70px;right:-14px;bottom:-14px;animation-delay:-0.74s" onerror="this.style.display='none'">
     
     <div class="card sc g-pink" style="--ring:#fff8f3">
       <span class="sp" style="right:14px;top:30px">✦</span>
       <div class="scr">
-        <h1 class="gc">Bảo Châu’s<span>Graduation Ceremony</span></h1>
+        <h1 class="gc">Bảo Châu’s<span>Graduation Ceremony</span></h1><img class="dv" src="images/divider-1.png" alt="" onerror="this.style.display='none'">
         <div class="pf"><img src="anh.jpg" alt="Ảnh tốt nghiệp" onerror="this.parentNode.classList.add('no');this.remove()"></div>
         <p style="margin:0">Thiệp mời dành riêng cho</p>
         <div class="who script" id="g1">Bạn</div><br>
@@ -208,14 +236,14 @@ img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-ori
   </div></div>
 
   <!-- TRANG 2: LỜI MỜI (khung caro xanh) -->
-  <div class="pg"><div class="wrap"><img class="bw" src="images/no-3.png" alt="" style="width:72px;right:-24px;top:42%;--r:24deg;animation-delay:-1.59s" onerror="this.style.display='none'"><img class="bw" src="images/no-5.png" alt="" style="width:56px;left:-18px;top:46%;--r:-20deg;animation-delay:-2.12s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-2.png" alt="" style="width:84px;height:84px;left:-10px;top:-70px;animation-delay:-1.11s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-3.png" alt="" style="width:62px;height:72px;left:-14px;bottom:-14px;animation-delay:-1.48s" onerror="this.style.display='none'">
+  <div class="pg"><div class="wrap"><img class="fly" src="images/butterfly-2.png" alt="" style="width:58px;right:-22px;bottom:96px;animation-delay:-1.4s" onerror="this.style.display='none'"><img class="bw" src="images/no-3.png" alt="" style="width:72px;right:-24px;top:42%;--r:24deg;animation-delay:-1.59s" onerror="this.style.display='none'"><img class="bw" src="images/no-5.png" alt="" style="width:56px;left:-18px;top:46%;--r:-20deg;animation-delay:-2.12s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-2.png" alt="" style="width:84px;height:84px;left:-10px;top:-70px;animation-delay:-1.11s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-3.png" alt="" style="width:62px;height:72px;left:-14px;bottom:-14px;animation-delay:-1.48s" onerror="this.style.display='none'">
     <div class="card g-blue">
       
       <span class="happy">HAPPY</span><span class="sp" style="right:-6px;top:-20px">✦</span><span class="sp" style="left:8px;top:6px;color:#e68aa8">✦</span>
       
       <span class="rec">REC<i>●</i></span>
       <div class="scr">
-        <h1>Ngày này cũng đã tới <span class="pkc">gòiiiiii</span> 🥹☕</h1>
+        <h1>Ngày này cũng đã tới <span class="pkc">gòiiiiii</span> 🥹☕</h1><img class="dv" src="images/divider-2.png" alt="" onerror="this.style.display='none'">
         <div class="note1">Ngày <span class="pkc">Chouiu</span> đã chính thức out khỏi <span class="blc">UIT</span>....</div>
         <p>Gửi <b id="g2">bạn</b> iu 💕 qua chung vui với mình nha!</p>
         <button class="pb" id="yay">Chúc mừng 🎉</button><button class="pb b" id="nx">Xem tiếp 👉</button>
@@ -224,13 +252,13 @@ img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-ori
   </div></div>
 
   <!-- TRANG 3: LỊCH (khung kem lượn sóng + nơ) -->
-  <div class="pg"><div class="wrap"><img class="bw" src="images/no-5.png" alt="" style="width:72px;left:-22px;top:-8px;--r:-22deg;animation-delay:-2.65s" onerror="this.style.display='none'"><img class="bw" src="images/no-6.png" alt="" style="width:72px;right:-22px;top:-8px;--r:22deg;scale:-1 1;animation-delay:-3.18s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-3.png" alt="" style="width:110px;height:100px;left:50%;margin-left:-55px;top:-86px;animation-delay:-1.85s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-6.png" alt="" style="width:60px;height:72px;left:-14px;bottom:-14px;animation-delay:-2.22s" onerror="this.style.display='none'">
+  <div class="pg"><div class="wrap"><img class="fly" src="images/butterfly-3.png" alt="" style="width:60px;left:-28px;top:40%;animation-delay:-0.9s" onerror="this.style.display='none'"><img class="bw" src="images/no-5.png" alt="" style="width:72px;left:-22px;top:-8px;--r:-22deg;animation-delay:-2.65s" onerror="this.style.display='none'"><img class="bw" src="images/no-6.png" alt="" style="width:72px;right:-22px;top:-8px;--r:22deg;scale:-1 1;animation-delay:-3.18s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-3.png" alt="" style="width:110px;height:100px;left:50%;margin-left:-55px;top:-86px;animation-delay:-1.85s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-6.png" alt="" style="width:60px;height:72px;left:-14px;bottom:-14px;animation-delay:-2.22s" onerror="this.style.display='none'">
     
     <div class="card cake g-pink"><i class="cream"></i>
       
       <span class="sp" style="left:-4px;bottom:-12px;color:#e68aa8">✦</span><span class="sp" style="right:-4px;bottom:-12px">✦</span>
       <div class="scr">
-        <h2>THÁNG 11 · 2026</h2>
+        <h2>THÁNG 11 · 2026</h2><img class="dv" src="images/divider-3.png" alt="" onerror="this.style.display='none'">
         <div class="grid" id="grid"></div>
         <h2 class="pkc">Thứ Sáu, 27/11/2026</h2>
         <p style="margin:0"><b>🕦 Mời lúc 11g30</b></p>
@@ -241,13 +269,13 @@ img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-ori
   </div></div>
 
   <!-- TRANG 4: ĐỊA ĐIỂM (khung xanh viền sò) -->
-  <div class="pg"><div class="wrap"><img class="bw" src="images/no-1.png" alt="" style="width:86px;left:-26px;top:-10px;--r:-20deg;animation-delay:-0.31s" onerror="this.style.display='none'"><img class="bw" src="images/no-7.png" alt="" style="width:96px;right:-30px;top:-6px;--r:16deg;animation-delay:-0.84s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-4.png" alt="" style="width:100px;height:100px;left:50%;margin-left:-50px;top:-86px;animation-delay:-0.19s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-5.png" alt="" style="width:60px;height:66px;right:-14px;bottom:-14px;animation-delay:-0.56s" onerror="this.style.display='none'">
+  <div class="pg"><div class="wrap"><img class="fly" src="images/butterfly-1.png" alt="" style="width:58px;left:-26px;bottom:76px;animation-delay:-2s" onerror="this.style.display='none'"><img class="bw" src="images/no-1.png" alt="" style="width:86px;left:-26px;top:-10px;--r:-20deg;animation-delay:-0.31s" onerror="this.style.display='none'"><img class="bw" src="images/no-7.png" alt="" style="width:96px;right:-30px;top:-6px;--r:16deg;animation-delay:-0.84s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-4.png" alt="" style="width:100px;height:100px;left:50%;margin-left:-50px;top:-86px;animation-delay:-0.19s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-5.png" alt="" style="width:60px;height:66px;right:-14px;bottom:-14px;animation-delay:-0.56s" onerror="this.style.display='none'">
     
     <div class="card sc g-blue" style="--ring:#fff8f3">
       
       <div class="scr">
         <div class="pin">🏫</div>
-        <h2>Trường Đại học Công nghệ Thông tin</h2>
+        <h2>Trường Đại học Công nghệ Thông tin</h2><img class="dv" src="images/divider-1.png" alt="" onerror="this.style.display='none'">
         <div class="addr">Khu đô thị ĐHQG-HCM, Khu phố 9, Phường Linh Xuân, Ho Chi Minh City</div>
         <a class="pb b" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+C%C3%B4ng+ngh%E1%BB%87+Th%C3%B4ng+tin+%C4%90HQG-HCM">🗺️ Chỉ đường</a>
         <a class="pb" href="tel:0935027649">📞 0935 027 649</a>
@@ -256,14 +284,14 @@ img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-ori
   </div></div>
 
   <!-- TRANG 5: LỜI NHẮN (khung ren + nơ bốn góc) -->
-  <div class="pg"><div class="wrap"><img class="bw" src="images/no-9.png" alt="" style="width:84px;left:-26px;top:-10px;--r:-20deg;animation-delay:-1.37s" onerror="this.style.display='none'"><img class="bw" src="images/no-3.png" alt="" style="width:80px;right:-26px;top:-10px;--r:20deg;scale:-1 1;animation-delay:-1.90s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-5.png" alt="" style="width:110px;height:96px;left:50%;margin-left:-55px;top:-82px;animation-delay:-0.93s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-7.png" alt="" style="width:60px;height:70px;left:-14px;bottom:-14px;animation-delay:-1.30s" onerror="this.style.display='none'">
+  <div class="pg"><div class="wrap"><img class="fly" src="images/butterfly-2.png" alt="" style="width:60px;right:-28px;top:46%;animation-delay:-0.3s" onerror="this.style.display='none'"><img class="bw" src="images/no-9.png" alt="" style="width:84px;left:-26px;top:-10px;--r:-20deg;animation-delay:-1.37s" onerror="this.style.display='none'"><img class="bw" src="images/no-3.png" alt="" style="width:80px;right:-26px;top:-10px;--r:20deg;scale:-1 1;animation-delay:-1.90s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-5.png" alt="" style="width:110px;height:96px;left:50%;margin-left:-55px;top:-82px;animation-delay:-0.93s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-7.png" alt="" style="width:60px;height:70px;left:-14px;bottom:-14px;animation-delay:-1.30s" onerror="this.style.display='none'">
     
     <div class="card sc lace g-pink" style="--ring:#fffdfb">
       
       
       <div class="xs" style="top:14px">✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ </div><div class="xs" style="top:calc(100% - 28px)">✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ ✕ </div>
       <div class="scr fm">
-        <h2>Nhắn gì cho mình nha!</h2>
+        <h2>Nhắn gì cho mình nha!</h2><img class="dv" src="images/divider-2.png" alt="" onerror="this.style.display='none'">
         <input id="nm" placeholder="Tên của bạn" maxlength="60">
         <textarea id="msg" placeholder="Viết lời chúc / lời nhắn ở đây nha..." maxlength="500"></textarea>
         <button class="pb" id="send">Gửi lời nhắn 💌</button>
@@ -276,7 +304,7 @@ img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-ori
   </div></div>
 
   <!-- TRANG 6: THƯ CẢM ƠN (khung hồng viền sò, nền caro xanh lá) -->
-  <div class="pg"><div class="wrap"><img class="bw" src="images/no-2.png" alt="" style="width:84px;left:-26px;top:-8px;--r:-20deg;animation-delay:-2.43s" onerror="this.style.display='none'"><img class="bw" src="images/no-8.png" alt="" style="width:58px;right:-16px;top:30px;--r:10deg;animation-delay:-2.96s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-6.png" alt="" style="width:100px;height:100px;left:50%;margin-left:-50px;top:-86px;animation-delay:-1.67s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-1.png" alt="" style="width:62px;height:62px;right:-14px;bottom:-14px;animation-delay:-2.04s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-2.png" alt="" style="width:60px;height:60px;left:-14px;bottom:-14px;animation-delay:-0.01s" onerror="this.style.display='none'">
+  <div class="pg"><div class="wrap"><img class="fly" src="images/butterfly-1.png" alt="" style="width:60px;right:-30px;top:62%;animation-delay:-1.1s" onerror="this.style.display='none'"><img class="bw" src="images/no-2.png" alt="" style="width:84px;left:-26px;top:-8px;--r:-20deg;animation-delay:-2.43s" onerror="this.style.display='none'"><img class="bw" src="images/no-8.png" alt="" style="width:58px;right:-16px;top:30px;--r:10deg;animation-delay:-2.96s" onerror="this.style.display='none'"><img class="char swayc" src="images/char-6.png" alt="" style="width:100px;height:100px;left:50%;margin-left:-50px;top:-86px;animation-delay:-1.67s" onerror="this.style.display='none'"><img class="char hopc" src="images/char-1.png" alt="" style="width:62px;height:62px;right:-14px;bottom:-14px;animation-delay:-2.04s" onerror="this.style.display='none'"><img class="char wigc" src="images/char-2.png" alt="" style="width:60px;height:60px;left:-14px;bottom:-14px;animation-delay:-0.01s" onerror="this.style.display='none'">
     
     <div class="card sc g-mint" style="--ring:#ffd9e6">
       
@@ -284,7 +312,7 @@ img.bw{position:absolute;z-index:5;height:auto;pointer-events:none;transform-ori
       
       <span class="note-m" style="left:6px;bottom:-22px">♪</span><span class="note-m" style="right:90px;bottom:-26px;animation-delay:-1s;color:#e68aa8">♫</span>
       <div class="scr">
-        <div class="paper">
+        <img class="dv" src="images/divider-3.png" alt="" onerror="this.style.display='none'"><div class="paper">
           <p class="to" style="--d:.2s">Gửi người thương,</p>
           <p style="--d:.9s">Vậy là mình tốt nghiệp thật rồi. Nhân dịp này, mình muốn cảm ơn những người đã đi cùng mình suốt mấy năm qua.</p>
           <p style="--d:1.7s">Cảm ơn thầy cô đã dạy dỗ và kiên nhẫn với mình. Cảm ơn ba mẹ và gia đình đã lo cho mình ăn học, tin mình cả những lúc chính mình cũng không chắc. Cảm ơn bạn bè đã cùng mình thức khuya chạy deadline, rủ nhau đi ăn mỗi khi quá mệt, và ở lại cùng nhau đến tận những ngày cuối.</p>
@@ -316,10 +344,21 @@ var EVENT = new Date(2026,10,27,11,30,0); // ngày giờ sự kiện (tháng tí
   var q=new URLSearchParams(location.search),name=(q.get('name')||q.get('to')||'').trim();
   $('g1').textContent=name||'Bạn';$('g2').textContent=name||'bạn';$('nm').value=name;
   document.title='Bảo Châu’s Graduation Ceremony - gửi '+(name||'bạn');
+  // tiêu đề chữ tròn mập: mỗi chữ một màu pastel + lấp lánh
+  (function(){var n=0;function walk(el){[].slice.call(el.childNodes).forEach(function(c){
+    if(c.nodeType===3){var f=document.createDocumentFragment();
+      c.nodeValue.split(' ').forEach(function(w,wi){if(wi)f.appendChild(document.createTextNode(' '));if(!w)return;
+        var wr=document.createElement('em');
+        w.split('').forEach(function(ch){var i=document.createElement('i');i.textContent=ch;i.className='c'+(n%6);i.style.setProperty('--n',n);
+          if(n%3===1){var b=document.createElement('b');b.className='sk';b.textContent='✦';b.style.setProperty('--k',(n%2)?'#ffb3cf':'#8fc6f0');i.appendChild(b)}
+          wr.appendChild(i);n++});f.appendChild(wr)});
+      c.parentNode.replaceChild(f,c)}
+    else if(c.nodeType===1)walk(c)})}
+    [].forEach.call(document.querySelectorAll('.gc'),walk)})();
 
   // nền: bướm, tim, trăng bay lên
-  var ic=['✦','♡','no','✧','♡','no'],bg=$('bgf');
-  for(var i=0;i<26;i++){var s=document.createElement('span');var t=ic[i%6];if(t==='buom'||t==='no'){var im=document.createElement('img');im.src='images/'+t+'-'+(1+i%3)+'.png';im.style.width='100%';im.onerror=function(){this.style.display='none'};s.appendChild(im)}else s.textContent=t;
+  var ic=['✦','♡','no','✧','bf','no'],bg=$('bgf');
+  for(var i=0;i<26;i++){var s=document.createElement('span');var t=ic[i%6];if(t==='bf'||t==='no'){var im=document.createElement('img');im.src='images/'+(t==='bf'?'butterfly':t)+'-'+(1+i%3)+'.png';im.style.width='100%';im.onerror=function(){this.style.display='none'};s.appendChild(im)}else s.textContent=t;
     s.style.cssText='left:'+Math.random()*100+'%;font-size:'+(14+Math.random()*18)+'px;color:'+(i%2?'#ff9fc3':'#8fc3ee')+';animation-duration:'+(12+Math.random()*12)+'s;animation-delay:'+(-Math.random()*18)+'s';if(s.firstChild&&s.firstChild.tagName==='IMG')s.style.width=(26+Math.random()*18)+'px';bg.appendChild(s);}
 
   // lịch tháng 11/2026 (1/11 là Chủ nhật, tuần bắt đầu từ T2) + đếm ngược
